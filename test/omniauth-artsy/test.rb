@@ -2,27 +2,24 @@ require 'omniauth-artsy'
 require 'minitest/autorun'
 require 'mocha'
 
+
 class TestMyAuth < MiniTest::Unit::TestCase
   def setup
-
-    @client_id = '1234567890'
-    @client_secret = 'qwertyuiop'
+    @client_id = '912831askljfd2'
+    @client_secret = 'dfallksdfoads'
     @domain = "artsy.net"
-    @uid = 'lkjhgfdsa'
-    @name = "Johnny Rotten"
-    @email = "jrotten@email.com"
+    @uid = 'asdfasdfadsfcdad'
+    @name = "Robert Smithson"
+    @email = "spiraljetty@artsy.net"
     @raw_info = {'id' => @uid, 'name' => @name, 'email' => @email}
-
     @request = stub('Request')
     @request.stubs(:params).returns({})
     @request.stubs(:cookies).returns({})
     @request.stubs(:env).returns({})
-
     args = [@client_id, @client_secret, @options].compact
     @strategy = OmniAuth::Strategies::Artsy.new(nil, *args)
     @strategy.stubs(:request).returns(@request)
     @strategy.stubs(:raw_info).returns(@raw_info)
-
   end
 
   def test_that_uid_is_returned
