@@ -1,11 +1,10 @@
 require 'omniauth-oauth2'
-require 'active_support/core_ext/string'
 
 module OmniAuth
   module Strategies
     class Artsy < OmniAuth::Strategies::OAuth2
       option :client_options, {
-        site: $gravity_url,
+        site: 'http://artsy.net',
         authorize_url: "/oauth2/authorize?scope=offline_access&response_type=code",
         token_url: '/oauth2/access_token?scope=offline_access&response_type=code&grant_type=authorization_code'
       }
