@@ -3,56 +3,55 @@ require 'spec_helper'
 describe OmniAuth::Strategies::Artsy do
   before :each do
     @request = double('Request')
-    @request.stub(:params) { {} }
+    allow(@request).to receive(:params) { {} }
 
     @client_id = '912831askljfd2'
     @client_secret = 'dfallksdfoads'
-    @domain = "artsy.net"
+    @domain = 'artsy.net'
     @uid = 'asdfasdfadsfcdad'
-    @name = "Bobert Smithson"
-    @email = "email@spiraljeezey.com"
-
+    @name = 'Bobert Smithson'
+    @email = 'email@spiraljeezey.com'
   end
 
   subject do
     OmniAuth::Strategies::Artsy.new(nil, @options || {}).tap do |strategy|
-      strategy.stub(:request) { @request }
+      allow(strategy).to receive(:request) { @request }
     end
   end
 
   describe '#client_options' do
-    it 'has correct Artsy/Gravity URL' do
-      subject.options.client_options.site.should eq('http://localhost:3000')
+    it 'has correct Artsy API URL' do
+      expect(subject.options.client_options.site).to eq('http://localhost:3000')
     end
 
     it 'has correct authorize url' do
-      subject.options.client_options.authorize_url.should eq('/oauth2/authorize?scope=offline_access&response_type=code')
+      expect(subject.options.client_options.authorize_url).to eq('/oauth2/authorize?scope=offline_access&response_type=code')
     end
 
     it 'has correct token_url url' do
-      subject.options.client_options.token_url.should eq('/oauth2/access_token?scope=offline_access&response_type=code&grant_type=authorization_code')
+      expect(subject.options.client_options.token_url).to eq('/oauth2/access_token?scope=offline_access&response_type=code&grant_type=authorization_code')
     end
   end
 
-  describe "with raw_info" do
+  describe 'with raw_info' do
     before :each do
-      @raw_info_hash = { "id" => @uid, "name" => @name, "email" => @email }
-      subject.stub(:raw_info) { @raw_info_hash }
+      @raw_info_hash = { 'id' => @uid, 'name' => @name, 'email' => @email }
+      allow(subject).to receive(:raw_info) { @raw_info_hash }
     end
 
     describe '#uid' do
       it 'returns the uid from raw_info' do
-        subject.uid.should eq(@uid)
+        expect(subject.uid).to eq(@uid)
       end
     end
 
     describe '#info' do
       context 'when data is present in raw info' do
         it 'returns the name' do
-          subject.info[:raw_info]["name"].should eq(@name)
+          expect(subject.info[:raw_info]['name']).to eq(@name)
         end
         it 'returns the email' do
-          subject.info[:raw_info]["email"].should eq(@email)
+          expect(subject.info[:raw_info]['email']).to eq(@email)
         end
       end
     end
@@ -60,14 +59,12 @@ describe OmniAuth::Strategies::Artsy do
     describe '#info' do
       context 'when data is present in raw info' do
         it 'returns the name' do
-          subject.info[:raw_info]["name"].should eq(@name)
+          expect(subject.info[:raw_info]['name']).to eq(@name)
         end
         it 'returns the email' do
-          subject.info[:raw_info]["email"].should eq(@email)
+          expect(subject.info[:raw_info]['email']).to eq(@email)
         end
       end
     end
-
   end
-
 end
