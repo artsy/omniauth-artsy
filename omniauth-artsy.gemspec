@@ -19,9 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'omniauth-oauth2', '>= 1.0.2'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'rdiscount'
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'simplecov'
   s.add_development_dependency 'webmock'
   s.add_development_dependency 'rubocop', '0.25.0'
 end
