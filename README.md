@@ -1,5 +1,7 @@
 # omniauth-artsy
 
+[![Build Status](https://travis-ci.org/artsy/omniauth-artsy.svg)](https://travis-ci.org/artsy/omniauth-artsy)
+
 Artsy OAuth2 Strategy for OmniAuth.
 
 ### Installation
