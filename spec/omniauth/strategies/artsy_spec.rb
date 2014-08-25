@@ -7,10 +7,10 @@ describe OmniAuth::Strategies::Artsy do
 
     @client_id = '912831askljfd2'
     @client_secret = 'dfallksdfoads'
-    @domain = "artsy.net"
+    @domain = 'artsy.net'
     @uid = 'asdfasdfadsfcdad'
-    @name = "Bobert Smithson"
-    @email = "email@spiraljeezey.com"
+    @name = 'Bobert Smithson'
+    @email = 'email@spiraljeezey.com'
 
   end
 
@@ -34,9 +34,9 @@ describe OmniAuth::Strategies::Artsy do
     end
   end
 
-  describe "with raw_info" do
+  describe 'with raw_info' do
     before :each do
-      @raw_info_hash = { "id" => @uid, "name" => @name, "email" => @email }
+      @raw_info_hash = { 'id' => @uid, 'name' => @name, 'email' => @email }
       allow(subject).to receive(:raw_info) { @raw_info_hash }
     end
 
@@ -49,10 +49,10 @@ describe OmniAuth::Strategies::Artsy do
     describe '#info' do
       context 'when data is present in raw info' do
         it 'returns the name' do
-          expect(subject.info[:raw_info]["name"]).to eq(@name)
+          expect(subject.info[:raw_info]['name']).to eq(@name)
         end
         it 'returns the email' do
-          expect(subject.info[:raw_info]["email"]).to eq(@email)
+          expect(subject.info[:raw_info]['email']).to eq(@email)
         end
       end
     end
@@ -60,10 +60,10 @@ describe OmniAuth::Strategies::Artsy do
     describe '#info' do
       context 'when data is present in raw info' do
         it 'returns the name' do
-          expect(subject.info[:raw_info]["name"]).to eq(@name)
+          expect(subject.info[:raw_info]['name']).to eq(@name)
         end
         it 'returns the email' do
-          expect(subject.info[:raw_info]["email"]).to eq(@email)
+          expect(subject.info[:raw_info]['email']).to eq(@email)
         end
       end
     end
