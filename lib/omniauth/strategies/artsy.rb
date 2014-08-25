@@ -4,7 +4,7 @@ module OmniAuth
   module Strategies
     class Artsy < OmniAuth::Strategies::OAuth2
       option :client_options,
-             site: ( ENV['gravity_url'] || 'http://localhost:3000'),
+             site: ENV['ARTSY_API_URL'] || 'http://localhost:3000',
              authorize_url: '/oauth2/authorize?scope=offline_access&response_type=code',
              token_url: '/oauth2/access_token?scope=offline_access&response_type=code&grant_type=authorization_code'
 

@@ -11,7 +11,6 @@ describe OmniAuth::Strategies::Artsy do
     @uid = 'asdfasdfadsfcdad'
     @name = 'Bobert Smithson'
     @email = 'email@spiraljeezey.com'
-
   end
 
   subject do
@@ -21,7 +20,7 @@ describe OmniAuth::Strategies::Artsy do
   end
 
   describe '#client_options' do
-    it 'has correct Artsy/Gravity URL' do
+    it 'has correct Artsy API URL' do
       expect(subject.options.client_options.site).to eq('http://localhost:3000')
     end
 
@@ -67,7 +66,5 @@ describe OmniAuth::Strategies::Artsy do
         end
       end
     end
-
   end
-
 end

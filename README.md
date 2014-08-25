@@ -26,6 +26,10 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+#### Configuration
+
+Set `ENV['ARTSY_API_URL']` to the location of the Artsy API, typically *https://api.artsy.net* in production. Defaults to *http://localhost:3000*.
+
 ### License
 
 MIT License, see [LICENSE](LICENSE) for details.
