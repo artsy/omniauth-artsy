@@ -21,11 +21,7 @@ module OmniAuth
       end
 
       def raw_info
-        # TODO: we should send the access_token with the headers,
-        # but it looks like the AccessToken's get request isn't sending it over
-        # as specified in the oauth gem's documentation.
-        # @raw_info ||= access_token.get('/api/v1/me',{ "X-ACCESS-TOKEN" => access_token.token }).parsed
-        @raw_info ||= access_token.get('/api/v1/me?access_token=' + access_token.token).parsed
+        @raw_info ||= access_token.get('/api/v1/me', headers: { 'X-ACCESS-TOKEN' => access_token.token }).parsed
       end
     end
   end
