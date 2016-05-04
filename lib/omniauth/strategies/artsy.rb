@@ -21,7 +21,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/api/v1/me', headers: { 'X-ACCESS-TOKEN' => access_token.token }).parsed
+        @raw_info ||= access_token.get('/api/current_user', headers: { 'X-ACCESS-TOKEN' => access_token.token }).parsed
       end
     end
   end
