@@ -40,7 +40,7 @@ describe OmniAuth::Strategies::Artsy do
     allow(subject).to receive(:access_token).and_return(access_token)
 
     response = instance_double(OAuth2::Response, parsed: @raw_info_hash)
-    expect(access_token).to receive(:get).with('/api/v1/me', headers: { 'X-ACCESS-TOKEN' => 'secret' }).and_return(response)
+    expect(access_token).to receive(:get).with('/api/current_user', headers: { 'X-ACCESS-TOKEN' => 'secret' }).and_return(response)
 
     expect(subject.raw_info).to eq(@raw_info_hash)
   end
