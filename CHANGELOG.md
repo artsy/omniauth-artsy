@@ -1,5 +1,5 @@
-0.2.0 (Next)
-============
+0.2.0 (5/4/2016)
+================
 
 * [#5](https://github.com/artsy/omniauth-artsy/pull/5): Obtain user details from APIv2 upon login - [@dblock](https://github.com/dblock).
 
