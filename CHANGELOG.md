@@ -1,6 +1,8 @@
 0.2.2 (Next)
 ============
 
+* Your contribution here.
+
 0.2.1
 ============
 

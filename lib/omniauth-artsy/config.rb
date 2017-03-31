@@ -2,10 +2,26 @@ require 'ostruct'
 
 module OmniAuth
   module Artsy
-    class << self; attr_accessor :config; end
+    module Config
+      extend self
+
+      attr_accessor :artsy_api_url
+
+      def reset
+        self.artsy_api_url = nil
+      end
+
+      reset
+    end
+
+    class << self
+      def configure
+        block_given? ? yield(Config) : Config
+      end
+
+      def config
+        Config
+      end
+    end
   end
 end
-
-OmniAuth::Artsy.config = OpenStruct.new(
-  artsy_api_url: ENV['ARTSY_API_URL'] || ENV['gravity_url']
-)
