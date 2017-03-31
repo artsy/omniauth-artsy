@@ -32,7 +32,7 @@ end
 Add `omniauth_artsy.rb` to your `config/initializers` and set `artsy_api_url`.
 ```ruby
 # config/initializers/omniauth_artsy.rb
-OmniAuth.Artsy.configure do |config|
+OmniAuth::Artsy.configure do |config|
   config.artsy_api_url = ENV['ARTSY_API_URL']
 end
 ```
