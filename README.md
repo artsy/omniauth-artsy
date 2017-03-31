@@ -28,7 +28,17 @@ end
 
 #### Configuration
 
-Set `ENV['ARTSY_API_URL']` to the location of the Artsy API, typically *https://api.artsy.net* in production. Defaults to *http://localhost:3000*.
+##### Configure in your app
+Add `omniauth_artsy.rb` to your `config/initializers` and set `artsy_api_url`.
+```ruby
+# config/initializers/omniauth_artsy.rb
+OmniAuth::Artsy.configure do |config|
+  config.artsy_api_url = ENV['ARTSY_API_URL']
+end
+```
+
+##### Using ENV
+Set `ENV['ARTSY_API_URL']` to the location of the Artsy API, typically *https://api.artsy.net* in production.
 
 ### License
 

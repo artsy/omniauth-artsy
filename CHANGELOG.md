@@ -1,7 +1,12 @@
-0.2.1 (Next)
+0.2.2 (Next)
 ============
 
 * Your contribution here.
+
+0.2.1
+============
+
+* [#6](https://github.com/artsy/omniauth-artsy/pull/6): Add config so we can configure/initialize `OmniAuth::Artsy` - [@ashkan18](https://github.com/ashkan18).
 
 0.2.0 (5/4/2016)
 ================

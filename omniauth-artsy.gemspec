@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'omniauth-artsy/version'
 
@@ -21,5 +22,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'webmock'
-  s.add_development_dependency 'rubocop', '0.25.0'
+  s.add_development_dependency 'rubocop'
 end
