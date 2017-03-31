@@ -22,8 +22,8 @@ describe OmniAuth::Strategies::Artsy do
   end
 
   describe '#client_options' do
-    it 'has correct Artsy API URL' do
-      expect(subject.options.client_options.site).to eq('http://localhost:3000')
+    it 'returns nil for Artsy API URL without setting' do
+      expect(subject.options.client_options.site).to be_nil
     end
 
     it 'has correct authorize url' do
