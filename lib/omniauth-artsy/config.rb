@@ -1,5 +1,3 @@
-require 'ostruct'
-
 module OmniAuth
   module Artsy
     module Config
