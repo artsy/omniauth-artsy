@@ -1,7 +1,12 @@
-0.2.2 (Next)
+0.2.3 (Next)
 ============
 
 * Your contribution here.
+
+0.2.2
+============
+
+* [#7](https://github.com/artsy/omniauth-artsy/pull/7): Fix issue in configuring Artsy's strategy when using new config - [@ashkan18](https://github.com/ashkan18).
 
 0.2.1
 ============
