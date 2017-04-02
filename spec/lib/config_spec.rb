@@ -3,6 +3,7 @@ require 'spec_helper'
 describe OmniAuth::Artsy::Config do
   describe '#configure' do
     before do
+      expect(OmniAuth::Artsy).to receive(:reconfigure_strategy).once
       OmniAuth::Artsy.configure do |config|
         config.artsy_api_url = 'http://localhost:3000/api'
       end
