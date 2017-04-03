@@ -14,7 +14,15 @@ module OmniAuth
 
     class << self
       def configure
-        block_given? ? yield(Config) : Config
+        if block_given?
+          yield(Config)
+          reconfigure_strategy
+        end
+        Config
+      end
+
+      def reconfigure_strategy
+        Strategies::Artsy.configure
       end
 
       def config
