@@ -1,7 +1,12 @@
 0.2.3 (Next)
-============
+===========
 
 * Your contribution here.
+
+0.2.3
+============
+
+* [#9](https://github.com/artsy/omniauth-artsy/pull/9): Upgrade `omniauth-oauth2` - [@ashkan18](https://github.com/ashkan18).
 
 0.2.2
 ============
