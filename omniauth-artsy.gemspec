@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 $LOAD_PATH.push File.expand_path('lib', __dir__)
 require 'omniauth-artsy/version'
 
 Gem::Specification.new do |s|
+  s.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
   s.name = 'omniauth-artsy'
   s.version = Omniauth::Artsy::VERSION
   s.platform = Gem::Platform::RUBY

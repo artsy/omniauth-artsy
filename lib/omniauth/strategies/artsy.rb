@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'omniauth-oauth2'
 
 module OmniAuth
@@ -11,10 +13,6 @@ module OmniAuth
       end
 
       configure
-
-      def request_phase
-        super
-      end
 
       uid do
         raw_info['id']

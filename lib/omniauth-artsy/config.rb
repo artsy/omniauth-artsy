@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module OmniAuth
   module Artsy
     module Config
-      extend self
+      module_function
 
       attr_accessor :artsy_api_url
 
