@@ -2,3 +2,6 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   NewCops: enable
+
+Style/ModuleFunction:
+  Enabled: false

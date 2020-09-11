@@ -3,7 +3,7 @@
 module OmniAuth
   module Artsy
     module Config
-      module_function
+      extend self
 
       attr_accessor :artsy_api_url
 
