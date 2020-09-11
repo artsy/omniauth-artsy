@@ -1,27 +1,33 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.push File.expand_path('lib', __dir__)
-require 'omniauth-artsy/version'
+require_relative 'lib/omniauth-artsy/version'
 
-Gem::Specification.new do |s|
-  s.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
-  s.name = 'omniauth-artsy'
-  s.version = Omniauth::Artsy::VERSION
-  s.platform = Gem::Platform::RUBY
-  s.authors = ['Dylan Fareed']
-  s.email = ['dylan@artsy.net']
-  s.homepage = 'https://github.com/artsy/omniauth-artsy'
-  s.summary = 'Omniauth plugin for Artsy authentication.  '
-  s.description = 'Omniauth plugin for Artsy authentication.  '
-  s.files = `git ls-files`.split("\n")
-  s.test_files = `git ls-files -- spec/*`.split("\n")
-  s.executables = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
-  s.require_paths = ['lib']
-  s.license = 'MIT'
+Gem::Specification.new do |spec|
+  spec.name = 'omniauth-artsy'
+  spec.version = Omniauth::Artsy::VERSION
+  spec.authors = ['Artsy']
+  spec.email = ['dev@artsy.net']
 
-  s.add_runtime_dependency 'omniauth-oauth2', '>= 1.1.2'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'rubocop'
-  s.add_development_dependency 'webmock'
+  spec.summary = 'Omniauth plugin for Artsy authentication.'
+  spec.description = 'Omniauth plugin for Artsy authentication.'
+  spec.homepage = 'https://github.com/artsy/omniauth-artsy'
+  spec.license = 'MIT'
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
+
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['changelog_uri'] = 'https://github.com/artsy/omniauth-artsy/blob/master/CHANGELOG.md'
+
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  end
+
+  spec.require_paths = ['lib']
+
+  spec.add_runtime_dependency 'omniauth-oauth2', '>= 1.1.2'
+
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'webmock'
 end
