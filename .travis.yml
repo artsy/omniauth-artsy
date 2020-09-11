@@ -19,3 +19,13 @@ matrix:
 
 before_install:
   - gem update bundler
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: fB7mDtkzL6Atv3/fkCion1NOwDlls5RxdoLrKIKyK4G6QFr2Py8Ijj/oY3i/xkOdo8O6qIE+wFZhzlGZZFBSWJijYWzrQ2FJu3W5oDUtN5ybZUfZbEchCwRXBOA++d5toFXBmEI7P3XTWiLiBmnmAgK2T7MNaeI2MbjIp8BUYXc=
+  gem: omniauth-artsy
+  on:
+    tags: true
+    repo: artsy/omniauth-artsy
+  skip_cleanup: 'true'
