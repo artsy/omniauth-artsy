@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path(__dir__)
-$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
-
+require 'bundler/setup'
 require 'omniauth-artsy'
-require 'rspec'
-require 'webmock/rspec'
 
-RSpec.configure(&:raise_errors_for_deprecations!)
+RSpec.configure do |config|
+  config.example_status_persistence_file_path = '.rspec_status'
+  config.raise_errors_for_deprecations!
+
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+end
