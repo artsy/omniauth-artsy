@@ -14,8 +14,8 @@ module OmniAuth
         # to CSRF attacks. We'll want to change the auth redirect behavior to a POST
         # request at some point in the future.
         # https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284
-        OmniAuth.config.allowed_request_methods = %i[post get]
-        OmniAuth.config.silence_get_warning = true
+        OmniAuth.config.allowed_request_methods = %i[post get] if OmniAuth.config.respond_to?(:allowed_request_methods=)
+        OmniAuth.config.silence_get_warning = true if OmniAuth.config.respond_to?(:silence_get_warning=)
       end
 
       configure
