@@ -10,6 +10,12 @@ module OmniAuth
                site: OmniAuth::Artsy.config.artsy_api_url || ENV['ARTSY_API_URL'] || ENV['gravity_url'],
                authorize_url: '/oauth2/authorize?scope=offline_access&response_type=code',
                token_url: '/oauth2/access_token?scope=offline_access&response_type=code&grant_type=authorization_code'
+        # TODO: Allow GET requests to redirect to /auth/artsy for now, which exposes us
+        # to CSRF attacks. We'll want to change the auth redirect behavior to a POST
+        # request at some point in the future.
+        # https://github.com/omniauth/omniauth/wiki/Resolving-CVE-2015-9284
+        OmniAuth.config.allowed_request_methods = %i[post get] if OmniAuth.config.respond_to?(:allowed_request_methods=)
+        OmniAuth.config.silence_get_warning = true if OmniAuth.config.respond_to?(:silence_get_warning=)
       end
 
       configure
