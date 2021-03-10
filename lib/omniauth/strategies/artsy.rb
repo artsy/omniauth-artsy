@@ -31,6 +31,16 @@ module OmniAuth
       def raw_info
         @raw_info ||= access_token.get('/api/current_user', headers: { 'X-ACCESS-TOKEN' => access_token.token }).parsed
       end
+
+      alias old_request_phase request_phase
+
+      def request_phase
+        if session.id && !session.id.empty?
+          options[:authorize_params] ||= {}
+          options[:authorize_params].merge!(original_session_id: session.id)
+        end
+        old_request_phase
+      end
     end
   end
 end
