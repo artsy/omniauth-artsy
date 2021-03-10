@@ -1,7 +1,17 @@
+
+
 0.2.3 (Next)
 ===========
 
 * Your contribution here.
+
+0.3.1
+============
+* [#15](https://github.com/artsy/omniauth-artsy/pull/15): pass an original_session_id to oauth provider if available - [@joeyAghion](https://github.com/joeyAghion)
+
+0.3.0
+============
+* [#14](https://github.com/artsy/omniauth-artsy/pull/14): permit GET requests globally, allowing omniauth upgrades - [@ansor4](https://github.com/ansor4).
 
 0.2.3
 ============
