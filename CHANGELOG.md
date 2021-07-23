@@ -1,7 +1,17 @@
-0.2.3 (Next)
+0.4.1 (Next)
 ===========
 
 * Your contribution here.
+
+0.4.0
+============
+
+* [#16](https://github.com/artsy/omniauth-artsy/pull/16): Disallow GET requests for omniauth - [@starsirius](https://github.com/starsirius).
+
+0.3.0
+============
+
+* [#14](https://github.com/artsy/omniauth-artsy/pull/14): Allow GET requests for omniauth - [@ansor4](https://github.com/ansor4).
 
 0.2.3
 ============
