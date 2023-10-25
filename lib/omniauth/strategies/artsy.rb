@@ -9,7 +9,8 @@ module OmniAuth
         option :client_options,
                site: OmniAuth::Artsy.config.artsy_api_url || ENV['ARTSY_API_URL'] || ENV['gravity_url'],
                authorize_url: '/oauth2/authorize?scope=offline_access&response_type=code',
-               token_url: '/oauth2/access_token?scope=offline_access&response_type=code&grant_type=authorization_code'
+               token_url: '/oauth2/access_token?scope=offline_access&response_type=code&grant_type=authorization_code',
+               auth_scheme: :request_body
       end
 
       configure
