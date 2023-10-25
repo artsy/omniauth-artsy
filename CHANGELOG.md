@@ -1,7 +1,12 @@
-0.4.1 (Next)
+(Next)
 ===========
 
 * Your contribution here.
+
+0.5.0
+===========
+
+* [#17](https://github.com/artsy/omniauth-artsy/pull/17): specify auth_scheme for compatibility with oauth2 >=2 - [@joeyAghion](https://github.com/joeyAghion).
 
 0.4.0
 ============
